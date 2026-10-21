@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ErgoDesk Pro 15.7" — Ingeniería Aditiva y Calidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            background-color: #000000;
+            color: #f5f5f7;
+            overflow-x: hidden;
+        }
+        .apple-gradient-text {
+            background: linear-gradient(180deg, #FFFFFF 0%, #86868b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+        }
+        .bento-card {
+            background: #111113;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.22);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glow-effect {
+            background: radial-gradient(circle at center, rgba(255,255,255,0.12) 0%, rgba(0,0,0,0) 70%);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-white selection:text-black">
+
+    <!-- Navbar Estilo Apple -->
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between text-xs font-medium tracking-wide text-zinc-400">
+            <a href="#" class="text-white font-bold text-base tracking-tight flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-white inline-block"></span>
+                ErgoDesk <span class="text-zinc-500 font-normal text-xs">15.7"</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#diseno" class="hover:text-white transition">Diseño CAD</a>
+                <a href="#proceso" class="hover:text-white transition">Proceso (12 Etapas)</a>
+                <a href="#amef" class="hover:text-white transition">Matriz AMEF</a>
+                <a href="#materiales" class="hover:text-white transition">BOM & Materiales</a>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-white text-black font-semibold text-[11px]">La Salle Bajío</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 px-6 text-center glow-effect">
+        <div class="reveal max-w-4xl mx-auto">
+            <p class="text-xs md:text-sm uppercase tracking-[0.25em] text-zinc-400 font-semibold mb-4">
+                Planeación Avanzada de la Calidad • Manufactura Aditiva
+            </p>
+            <h1 class="text-5xl md:text-8xl font-extrabold tracking-tight apple-gradient-text leading-none mb-6">
+                ErgoDesk Pro.<br><span class="text-3xl md:text-6xl font-semibold text-zinc-400">Precisión en 15.7 pulgadas.</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-zinc-400 text-lg md:text-xl font-normal leading-relaxed mb-10">
+                Diseñado en SolidWorks con arquitectura hexagonal de flujo térmico. Impreso en polímero PETG de grado ingenieril para extender la vida útil de tu laptop y proteger tu postura.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mb-14">
+                <a href="#amef" class="px-7 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-zinc-200 transition">
+                    Explorar Análisis AMEF
+                </a>
+                <label for="upload-cad" class="cursor-pointer px-7 py-3.5 rounded-full bg-zinc-900 text-white border border-white/15 font-semibold text-sm hover:bg-zinc-800 transition">
+                    Cargar Render de SolidWorks
+                </label>
+                <input id="upload-cad" type="file" accept="image/*" class="hidden" onchange="previewImage(event)">
+            </div>
+        </div>
+
+        <!-- Showcase del Soporte SolidWorks -->
+        <div class="reveal w-full max-w-4xl mx-auto bento-card p-8 md:p-12 relative overflow-hidden group">
+            <div class="flex justify-between items-center mb-6 text-left border-b border-white/10 pb-4">
+                <div>
+                    <span class="text-[11px] uppercase tracking-widest text-zinc-500 block">Modelo CAD 3D • SolidWorks</span>
+                    <h3 class="text-lg font-semibold text-white">Perfil Modular ErgoDesk 15.7" (Estructura Hexagonal)</h3>
+                </div>
+                <span class="text-xs px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 border border-white/10">FE-Simulation: Carga 5 kg (FS ≥ 2.0)</span>
+            </div>
+
+            <!-- Imagen / Render interactivo -->
+            <div class="relative flex items-center justify-center min-h-[280px] md:min-h-[360px] bg-gradient-to-b from-zinc-900/50 to-black rounded-2xl p-6 border border-white/5">
+                <!-- Si subes un archivo solidworks.png en tu carpeta o usas el botón, se muestra aquí -->
+                <img id="cad-img" src="solidworks.png" alt="Render SolidWorks ErgoDesk" class="max-h-[340px] object-contain rounded-xl hidden" onload="this.classList.remove('hidden'); document.getElementById('cad-svg').classList.add('hidden');">
+                
+                <!-- Recreación vectorial de alta precisión del modelo de SolidWorks del Word -->
+                <svg id="cad-svg" viewBox="0 0 800 380" class="w-full max-w-2xl drop-shadow-[0_20px_35px_rgba(255,255,255,0.08)] transition-transform duration-700 group-hover:scale-105">
+                    <defs>
+                        <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f4f4f6" />
+                            <stop offset="50%" stop-color="#d4d4d8" />
+                            <stop offset="100%" stop-color="#71717a" />
+                        </linearGradient>
+                        <pattern id="hexGrid" width="26" height="24" patternUnits="userSpaceOnUse">
+                            <polygon points="13,2 23,7 23,17 13,22 3,17 3,7" fill="#09090b" stroke="#52525b" stroke-width="1.5"/>
+                        </pattern>
+                    </defs>
+                    <!-- Sombra de piso estilo SolidWorks -->
+                    <ellipse cx="410" cy="345" rx="310" ry="14" fill="rgba(255,255,255,0.05)" />
+                    <!-- Extrusión 3D Trasera -->
+                    <path d="M95,45 L125,32 L675,260 L675,215 L725,198 L740,210 L740,305 L700,322 L95,295 Z" fill="#52525b" opacity="0.45"/>
+                    <!-- Cara Principal del Soporte -->
+                    <path d="M80,55 Q80,35 100,42 L665,270 L665,220 Q665,195 695,195 L715,195 Q735,195 735,220 L735,295 Q735,320 705,320 L100,310 Q80,310 80,290 Z" fill="url(#metal)" stroke="#ffffff" stroke-width="2"/>
+                    <!-- Patrón de Hexágonos de Ventilación -->
+                    <path d="M98,65 L645,280 L645,302 L98,295 Z" fill="url(#hexGrid)" opacity="0.88"/>
+                    <!-- Ventana Triangular Interna de Aligeramiento -->
+                    <path d="M165,125 L455,235 L455,258 L165,252 Z" fill="#000000" stroke="#a1a1aa" stroke-width="3" stroke-linejoin="round"/>
+                    <!-- Efecto de Profundidad en Ventana -->
+                    <path d="M165,125 L185,120 L465,230 L455,235 Z" fill="#3f3f46"/>
+                    <path d="M165,125 L185,120 L185,245 L165,252 Z" fill="#52525b"/>
+                </svg>
+            </div>
+            <p class="text-xs text-zinc-500 mt-4">
+                💡 <b>Tip:</b> Haz clic en "Cargar Render de SolidWorks" arriba para ver tu captura original en vivo, o guarda tu imagen como <code class="text-zinc-300">solidworks.png</code> en la misma carpeta.
+            </p>
+        </div>
+    </section>
+
+    <!-- Bento Grid: Especificaciones Clave -->
+    <section id="diseno" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="reveal text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">Ingeniería pensada al milímetro.</h2>
+            <p class="text-zinc-400 max-w-xl mx-auto">Modular, ultraligero y diseñado con la altura ergonómica ideal para proteger tus muñecas al escribir.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="reveal bento-card p-8 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-zinc-500">Compatibilidad</span>
+                    <h3 class="text-5xl font-extrabold text-white mt-3 mb-2">15.7"</h3>
+                    <p class="text-sm text-zinc-400">Centro de gravedad validado mediante checklist QFD para laptops de 15" a 17" de hasta 3.5 kg de peso.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-white/10 text-xs text-zinc-500">Estándar OP-01 Verificado</div>
+            </div>
+
+            <div class="reveal bento-card p-8 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-zinc-500">Resistencia Mecánica</span>
+                    <h3 class="text-5xl font-extrabold text-white mt-3 mb-2">≥ 3.5 mm</h3>
+                    <p class="text-sm text-zinc-400">Espesor de pared estandarizado con chaflanes en nodos críticos, de 4 a 5 perímetros y 35% de relleno giroide.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-white/10 text-xs text-zinc-500">Simulación FEA Estática (5 kg)</div>
+            </div>
+
+            <div class="reveal bento-card p-8 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-zinc-500">Mitigación de Riesgo</span>
+                    <h3 class="text-5xl font-extrabold text-emerald-400 mt-3 mb-2">-81.5%</h3>
+                    <p class="text-sm text-zinc-400">Reducción promedio en los 5 riesgos principales del proceso, disminuyendo el NPR máximo de 240 a solo 36.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-white/10 text-xs text-zinc-500">Certificación PFMEA Completada</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagrama de Proceso (12 Etapas) -->
+    <section id="proceso" class="py-24 px-6 bg-zinc-950 border-y border-white/10">
+        <div class="max-w-6xl mx-auto">
+            <div class="reveal text-center mb-16">
+                <span class="text-xs uppercase tracking-[0.2em] text-zinc-500 font-semibold">Flujo de Manufactura Aditiva</span>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight mt-2 mb-4">12 etapas de precisión continua.</h2>
+                <p class="text-zinc-400 max-w-2xl mx-auto">Desde la parametrización CAD hasta la inspección con plantillas Go/No-Go.</p>
+            </div>
+
+            <div class="reveal grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <div class="bento-card p-5"><span class="text-xs text-zinc-500 font-mono">01</span><h4 class="font-semibold mt-1">Definir requisitos</h4><p class="text-xs text-zinc-400 mt-1">Ergonomía y carga 15.7"</p></div>
+                <div class="bento-card p-5"><span class="text-xs text-zinc-500 font-mono">02</span><h4 class="font-semibold mt-1">Diseño 3D CAD</h4><p class="text-xs text-zinc-400 mt-1">Modelado en SolidWorks</p></div>
+                <div class="bento-card p-5"><span class="text-xs text-zinc-500 font-mono">03</span><h4 class="font-semibold mt-1">Exportar modelo</h4><p class="text-xs text-zinc-400 mt-1">Malla de alta resolución</p></div>
+                <div class="bento-card p-5"><span class="text-xs text-zinc-500 font-mono">04</span><h4 class="font-semibold mt-1">Generar G-code</h4><p class="text-xs text-zinc-400 mt-1">Infill giroide al 35%</p></div>
+                <div class="bento-card p-5"><span class="text-xs text-zinc-500 font-mono">05</span><h4 class="font-semibold mt-1">Importar a Impresora</h4><p class="text-xs text-zinc-400 mt-1">Boquilla 0.4 mm FDM</p></div>
+                <div class="bento-card p-5"><span class="text-xs text-zinc-500 font-mono">06</span><h4 class="font-semibold mt-1">Configurar Parámetros</h4><p class="text-xs text-zinc-400 mt-1">Perfil térmico maestro</p></div>
+                <div class="bento-card p-5"><span class="text-xs text-zinc-500 font-mono">07</span><h4 class="font-semibold mt-1">Cargar Filamento PETG</h4><p class="text-xs text-zinc-400 mt-1">Secado previo a 65 °C</p></div>
+                <div class="bento-card p-5"><span class="text-xs text-zinc-500 font-mono">08</span><h4 class="font-semibold mt-1">Iniciar Impresión</h4><p class="text-xs text-zinc-400 mt-1">Cama limpia con IPA 99%</p></div>
+                <div class="bento-card p-5"><span class="text-xs text-zinc-500 font-mono">09</span><h4 class="font-semibold mt-1">Retirar la Pieza</h4><p class="text-xs text-zinc-400 mt-1">Enfriamiento controlado</p></div>
+                <div class="bento-card p-5"><span class="text-xs text-zinc-500 font-mono">10</span><h4 class="font-semibold mt-1">Eliminar Soportes</h4><p class="text-xs text-zinc-400 mt-1">Limpieza con alicates</p></div>
+                <div class="bento-card p-5"><span class="text-xs text-zinc-500 font-mono">11</span><h4 class="font-semibold mt-1">Acabado Superficial</h4><p class="text-xs text-zinc-400 mt-1">Gomas antiderrapantes</p></div>
+                <div class="bento-card p-5 border-white/30"><span class="text-xs text-emerald-400 font-mono">12</span><h4 class="font-semibold mt-1">Verificación y Prueba</h4><p class="text-xs text-zinc-400 mt-1">Inspección Go/No-Go</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matriz AMEF (PFMEA Top 5) -->
+    <section id="amef" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="reveal text-center mb-16">
+            <span class="text-xs uppercase tracking-[0.2em] text-zinc-500 font-semibold">Blindaje de Calidad</span>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mt-2 mb-4">Matriz AMEF de Proceso (PFMEA).</h2>
+            <p class="text-zinc-400 max-w-2xl mx-auto">
+                Analizamos las 12 operaciones del proceso para neutralizar modos de fallo críticos antes de producir cada soporte ErgoDesk.
+            </p>
+        </div>
+
+        <div class="reveal bento-card overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="border-b border-white/10 text-xs uppercase tracking-wider text-zinc-400 bg-zinc-900/60">
+                            <th class="p-4">ID / Etapa</th>
+                            <th class="p-4">Modo Potencial de Fallo</th>
+                            <th class="p-4">Efecto Potencial</th>
+                            <th class="p-4 text-center">NPR Inicial</th>
+                            <th class="p-4">Acciones Implementadas</th>
+                            <th class="p-4 text-center">NPR Final</th>
+                            <th class="p-4 text-right">Reducción</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/10 text-zinc-300">
+                        <tr class="hover:bg-white/[0.02]">
+                            <td class="p-4 font-semibold text-white">OP-02<span class="block text-xs text-zinc-500 font-normal">Diseño 3D CAD</span></td>
+                            <td class="p-4">Espesor de pared insuficiente o esquinas vivas</td>
+                            <td class="p-4 text-xs text-zinc-400">Fractura estructural por concentración de esfuerzos</td>
+                            <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-orange-500/20 text-orange-400">240 (Crítico)</span></td>
+                            <td class="p-4 text-xs">Simulación FEA estática para 5 kg (FS ≥ 2.0); espesor mín. ≥ 3.5 mm y chaflanes en nodos críticos.</td>
+                            <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400">32</span></td>
+                            <td class="p-4 text-right font-bold text-emerald-400">86.70%</td>
+                        </tr>
+                        <tr class="hover:bg-white/[0.02]">
+                            <td class="p-4 font-semibold text-white">OP-07<span class="block text-xs text-zinc-500 font-normal">Cargar PETG</span></td>
+                            <td class="p-4">Filamento degradado por absorción de humedad</td>
+                            <td class="p-4 text-xs text-zinc-400">Hilado excesivo (stringing), burbujas y pérdida de rigidez</td>
+                            <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-orange-500/20 text-orange-400">180 (Crítico)</span></td>
+                            <td class="p-4 text-xs">Protocolo de secado obligatorio (65 °C por 5 h) y alimentación desde Dry Box (&lt; 20% HR).</td>
+                            <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400">36</span></td>
+                            <td class="p-4 text-right font-bold text-emerald-400">80.00%</td>
+                        </tr>
+                        <tr class="hover:bg-white/[0.02]">
+                            <td class="p-4 font-semibold text-white">OP-04<span class="block text-xs text-zinc-500 font-normal">Generar G-code</span></td>
+                            <td class="p-4">Orientación incorrecta de piezas; infill bajo</td>
+                            <td class="p-4 text-xs text-zinc-400">Delaminación de capas bajo el peso del equipo</td>
+                            <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-orange-500/20 text-orange-400">160 (Crítico)</span></td>
+                            <td class="p-4 text-xs">Perfil maestro bloqueado: mín. 4-5 perímetros, 35% infill giroide y capas a compresión.</td>
+                            <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400">32</span></td>
+                            <td class="p-4 text-right font-bold text-emerald-400">80.00%</td>
+                        </tr>
+                        <tr class="hover:bg-white/[0.02]">
+                            <td class="p-4 font-semibold text-white">OP-01<span class="block text-xs text-zinc-500 font-normal">Requisitos</span></td>
+                            <td class="p-4">Dimensiones o requisitos de carga incompletos</td>
+                            <td class="p-4 text-xs text-zinc-400">Soporte inestable; la laptop se desliza o vence el centro</td>
+                            <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-red-500/20 text-red-400">140 (Alto)</span></td>
+                            <td class="p-4 text-xs">Checklist estandarizado (QFD y ergonomía) validando centro de gravedad para 15"-17" (hasta 3.5 kg).</td>
+                            <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400">28</span></td>
+                            <td class="p-4 text-right font-bold text-emerald-400">80.00%</td>
+                        </tr>
+                        <tr class="hover:bg-white/[0.02]">
+                            <td class="p-4 font-semibold text-white">OP-08<span class="block text-xs text-zinc-500 font-normal">Iniciar Impresión</span></td>
+                            <td class="p-4">Despegue de primera capa (warping) o Z-offset</td>
+                            <td class="p-4 text-xs text-zinc-400">Pérdida de planitud en la base o fallo catastrófico</td>
+                            <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-red-500/20 text-red-400">126 (Alto)</span></td>
+                            <td class="p-4 text-xs">Desengrase obligatorio con alcohol isopropílico (IPA 99%) y mallado automático ABL pre-impresión.</td>
+                            <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400">28</span></td>
+                            <td class="p-4 text-right font-bold text-emerald-400">77.80%</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="bg-white/[0.04] font-semibold text-white border-t border-white/15">
+                            <td colspan="3" class="p-4">Promedio Global Top 5 (Riesgo global reducido en 79.6%)</td>
+                            <td class="p-4 text-center text-orange-400">169.2</td>
+                            <td class="p-4 text-xs text-zinc-400">Controles preventivos y de detección activos</td>
+                            <td class="p-4 text-center text-emerald-400">31.2</td>
+                            <td class="p-4 text-right text-emerald-400">81.50%</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Materiales (BOM) -->
+    <section id="materiales" class="py-24 px-6 bg-zinc-950 border-t border-white/10">
+        <div class="max-w-6xl mx-auto">
+            <div class="reveal text-center mb-16">
+                <span class="text-xs uppercase tracking-[0.2em] text-zinc-500 font-semibold">Bill of Materials (BOM)</span>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight mt-2">Componentes de grado industrial.</h2>
+            </div>
+
+            <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bento-card p-6">
+                    <span class="text-[11px] uppercase tracking-widest text-zinc-500">Material Directo</span>
+                    <h4 class="text-lg font-bold text-white mt-1">Filamento PETG 1.75 mm</h4>
+                    <p class="text-xs text-zinc-400 mt-2">Polímero térmico de alta resistencia mecánica y térmica para la estructura principal.</p>
+                </div>
+                <div class="bento-card p-6">
+                    <span class="text-[11px] uppercase tracking-widest text-zinc-500">Material Directo</span>
+                    <h4 class="text-lg font-bold text-white mt-1">Almohadillas Antiderrapantes</h4>
+                    <p class="text-xs text-zinc-400 mt-2">Gomas adhesivas de silicona para sujeción firme y protección del chasis de la laptop.</p>
+                </div>
+                <div class="bento-card p-6">
+                    <span class="text-[11px] uppercase tracking-widest text-zinc-500">Consumible Químico</span>
+                    <h4 class="text-lg font-bold text-white mt-1">Alcohol Isopropílico (99%)</h4>
+                    <p class="text-xs text-zinc-400 mt-2">Desengrase profundo de la placa PEI para garantizar adhesión perfecta en la primera capa.</p>
+                </div>
+                <div class="bento-card p-6">
+                    <span class="text-[11px] uppercase tracking-widest text-zinc-500">Control Higrométrico</span>
+                    <h4 class="text-lg font-bold text-white mt-1">Sílica Gel en Dry Box</h4>
+                    <p class="text-xs text-zinc-400 mt-2">Control de humedad relativa (&lt; 20% HR) durante toda la alimentación del filamento.</p>
+                </div>
+                <div class="bento-card p-6">
+                    <span class="text-[11px] uppercase tracking-widest text-zinc-500">Hardware & Software</span>
+                    <h4 class="text-lg font-bold text-white mt-1">Impresora FDM + SolidWorks</h4>
+                    <p class="text-xs text-zinc-400 mt-2">Boquilla 0.4 mm con cama caliente, modelado paramétrico CAD y simulación FEA.</p>
+                </div>
+                <div class="bento-card p-6">
+                    <span class="text-[11px] uppercase tracking-widest text-zinc-500">Herramental de Calidad</span>
+                    <h4 class="text-lg font-bold text-white mt-1">Alicates y Plantilla Go/No-Go</h4>
+                    <p class="text-xs text-zinc-400 mt-2">Post-procesado de precisión y gauge dimensional para inspección de calidad final.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Créditos del Equipo -->
+    <footer class="py-16 px-6 border-t border-white/10 text-center text-xs text-zinc-500">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <p class="text-white font-semibold text-sm tracking-wide">
+                ErgoDesk — Universidad La Salle Bajío • Facultad de Ingenierías y Tecnologías
+            </p>
+            <p class="text-zinc-400">
+                Materia: <b>Planeación Avanzada de la Calidad</b> • Docente: Mariana Álvarez De La Cadena Y Yáñez
+            </p>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-zinc-400 pt-2">
+                <span>Gonzales Lozano María Rochel</span>
+                <span>•</span>
+                <span>Lozano Cabrera Haziel Alejandro</span>
+                <span>•</span>
+                <span>Nuño Arellano Eduardo Fabián</span>
+                <span>•</span>
+                <span>Pérez de la Cruz Mario Enrique</span>
+            </div>
+            <p class="text-zinc-600 pt-4">Equipo 18 • Diseñado para presentaciones ejecutivas en Vercel.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Animación e Imagen en Vivo -->
+    <script>
+        // Animación suave estilo Apple al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Función para cargar tu imagen de SolidWorks en un clic durante o antes de la presentación
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById('cad-img');
+                    img.src = e.target.result;
+                    img.classList.remove('hidden');
+                    document.getElementById('cad-svg').classList.add('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
