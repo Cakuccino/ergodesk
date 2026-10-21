@@ -99,44 +99,18 @@
                 </div>
                 <span class="text-xs px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 border border-white/10">FE-Simulation: Carga 5 kg (FS ≥ 2.0)</span>
             </div>
-
-            <!-- Imagen / Render interactivo -->
-            <div class="relative flex items-center justify-center min-h-[280px] md:min-h-[360px] bg-gradient-to-b from-zinc-900/50 to-black rounded-2xl p-6 border border-white/5">
-                <!-- Si subes un archivo solidworks.png en tu carpeta o usas el botón, se muestra aquí -->
-                <img id="cad-img" src="solidworks.png" alt="Render SolidWorks ErgoDesk" class="max-h-[340px] object-contain rounded-xl hidden" onload="this.classList.remove('hidden'); document.getElementById('cad-svg').classList.add('hidden');">
-                
-                <!-- Recreación vectorial de alta precisión del modelo de SolidWorks del Word -->
-                <svg id="cad-svg" viewBox="0 0 800 380" class="w-full max-w-2xl drop-shadow-[0_20px_35px_rgba(255,255,255,0.08)] transition-transform duration-700 group-hover:scale-105">
-                    <defs>
-                        <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#f4f4f6" />
-                            <stop offset="50%" stop-color="#d4d4d8" />
-                            <stop offset="100%" stop-color="#71717a" />
-                        </linearGradient>
-                        <pattern id="hexGrid" width="26" height="24" patternUnits="userSpaceOnUse">
-                            <polygon points="13,2 23,7 23,17 13,22 3,17 3,7" fill="#09090b" stroke="#52525b" stroke-width="1.5"/>
-                        </pattern>
-                    </defs>
-                    <!-- Sombra de piso estilo SolidWorks -->
-                    <ellipse cx="410" cy="345" rx="310" ry="14" fill="rgba(255,255,255,0.05)" />
-                    <!-- Extrusión 3D Trasera -->
-                    <path d="M95,45 L125,32 L675,260 L675,215 L725,198 L740,210 L740,305 L700,322 L95,295 Z" fill="#52525b" opacity="0.45"/>
-                    <!-- Cara Principal del Soporte -->
-                    <path d="M80,55 Q80,35 100,42 L665,270 L665,220 Q665,195 695,195 L715,195 Q735,195 735,220 L735,295 Q735,320 705,320 L100,310 Q80,310 80,290 Z" fill="url(#metal)" stroke="#ffffff" stroke-width="2"/>
-                    <!-- Patrón de Hexágonos de Ventilación -->
-                    <path d="M98,65 L645,280 L645,302 L98,295 Z" fill="url(#hexGrid)" opacity="0.88"/>
-                    <!-- Ventana Triangular Interna de Aligeramiento -->
-                    <path d="M165,125 L455,235 L455,258 L165,252 Z" fill="#000000" stroke="#a1a1aa" stroke-width="3" stroke-linejoin="round"/>
-                    <!-- Efecto de Profundidad en Ventana -->
-                    <path d="M165,125 L185,120 L465,230 L455,235 Z" fill="#3f3f46"/>
-                    <path d="M165,125 L185,120 L185,245 L165,252 Z" fill="#52525b"/>
-                </svg>
+            
+            <!-- Imagen fija de SolidWorks con efectos de animación -->
+            <div
+                class="relative flex items-center justify-center min-h-[280px] md:min-h-[360px] bg-gradient-to-b from-zinc-900/50 to-black rounded-2xl p-6 border border-white/5 overflow-hidden group">
+                <img src="solidworks.jpg" alt="Render SolidWorks ErgoDesk"
+                    class="w-full max-h-[340px] object-contain rounded-xl drop-shadow-[0_20px_35px_rgba(255,255,255,0.08)] transition-transform duration-700 group-hover:scale-105">
             </div>
             <p class="text-xs text-zinc-500 mt-4">
-                💡 <b>Tip:</b> Haz clic en "Cargar Render de SolidWorks" arriba para ver tu captura original en vivo, o guarda tu imagen como <code class="text-zinc-300">solidworks.png</code> en la misma carpeta.
-            </p>
-        </div>
-    </section>
+                Modelo CAD 3D renderizado en SolidWorks <code class="text-zinc-300">solidworks.jpg</code>
+        </p>
+            </div>
+            </section>
 
     <!-- Bento Grid: Especificaciones Clave -->
     <section id="diseno" class="py-24 px-6 max-w-6xl mx-auto">
