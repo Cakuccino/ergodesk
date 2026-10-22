@@ -63,6 +63,7 @@
                 <a href="#proceso" class="hover:text-white transition">Proceso (12 Etapas)</a>
                 <a href="#amef" class="hover:text-white transition">Matriz AMEF</a>
                 <a href="#materiales" class="hover:text-white transition">BOM & Materiales</a>
+                <a href="#pokayoke" class="hover:text-white transition">Poka-Yoke</a>
             </div>
             <!-- Botón convertido en enlace con redirección y apertura en pestaña nueva -->
             <a href="https://www.lasallebajio.edu.mx/" target="_blank" rel="noopener noreferrer"
@@ -304,6 +305,157 @@
         </div>
     </section>
 
+    <!-- Sistemas Poka-Yoke (A Prueba de Errores) -->
+    <section id="pokayoke" class="py-24 px-6 max-w-6xl mx-auto border-t border-white/10">
+        <!-- 1. Justificación y Contexto -->
+        <div class="reveal text-center mb-16">
+            <span class="text-xs uppercase tracking-[0.2em] text-zinc-500 font-semibold">Metodología APQP • Cero Defectos</span>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mt-2 mb-4">Sistemas Poka-Yoke.</h2>
+            <p class="text-zinc-400 max-w-3xl mx-auto text-sm md:text-base leading-relaxed">
+                Para garantizar que el soporte ergonómico de <span class="text-white font-medium">ErgoDesk</span> cumpla con los estándares de calidad de la industria y la metodología APQP, se identificaron puntos críticos de fallo con NPR elevado en el AMEF de proceso. Para neutralizar estos riesgos de manera proactiva, se implementaron dos mecanismos <span class="text-white font-medium">Poka-Yoke (a prueba de errores)</span>: uno orientado al control de materia prima y otro a la verificación dimensional final.
+            </p>
+        </div>
+
+        <!-- 2 y 3. Desarrollo de Poka-Yoke 1 y 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <!-- Card Poka-Yoke 1 -->
+            <div class="reveal bento-card p-8 flex flex-col justify-between relative overflow-hidden">
+                <div>
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-6 border-b border-white/10 pb-4">
+                        <span class="text-[11px] uppercase tracking-widest text-emerald-400 font-semibold">Poka-Yoke 01 • Proceso de Fabricación</span>
+                        <span class="text-xs px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 border border-white/10 font-mono">OP-07: Cargar PETG</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Sistema de Bloqueo por Control Higrométrico en Dry Box</h3>
+                    <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                        <strong class="text-zinc-200">Modo de fallo que previene:</strong> Filamento degradado por absorción de humedad, lo que genera hilado excesivo (<em>stringing</em>), burbujas internas y pérdida crítica de rigidez estructural en el soporte.
+                    </p>
+                    <div class="space-y-3 text-xs text-zinc-300 bg-white/[0.02] p-5 rounded-2xl border border-white/5">
+                        <div class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span>
+                            <p><strong class="text-white">Almacenamiento Activo:</strong> El polímero PETG de grado ingenieril se resguarda en una Dry Box equipada con sensor digital y perlas de sílica gel que aseguran una humedad relativa <strong class="text-emerald-400">&lt; 20% HR</strong>.</p>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span>
+                            <p><strong class="text-white">Interbloqueo Mecánico/Digital:</strong> Si el sensor detecta que la humedad interna excede el parámetro permitido, la compuerta impide la extracción y alimentación del filamento hacia la impresora FDM.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                    <span class="text-zinc-500">Impacto directo en AMEF (Reducción de Ocurrencia)</span>
+                    <span class="font-bold text-emerald-400">NPR: 180 → 36 (-80%)</span>
+                </div>
+            </div>
+
+            <!-- Card Poka-Yoke 2 -->
+            <div class="reveal bento-card p-8 flex flex-col justify-between relative overflow-hidden">
+                <div>
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-6 border-b border-white/10 pb-4">
+                        <span class="text-[11px] uppercase tracking-widest text-emerald-400 font-semibold">Poka-Yoke 02 • Inspección Final</span>
+                        <span class="text-xs px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 border border-white/10 font-mono">OP-12: Verificación</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Calibre de Tolerancia Límite Pasa / No Pasa (Go / No-Go)</h3>
+                    <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                        <strong class="text-zinc-200">Modo de fallo que previene:</strong> Entrega de un soporte con desviaciones dimensionales o encogimiento térmico (<em>warping</em>), provocando inestabilidad o deslizamiento de la laptop (15.7") en su centro de gravedad.
+                    </p>
+                    <div class="space-y-3 text-xs text-zinc-300 bg-white/[0.02] p-5 rounded-2xl border border-white/5">
+                        <div class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span>
+                            <p><strong class="text-white">Lado "Go" (Pasa):</strong> Calibrador físico fijo con tolerancias geométricas estrictas donde la pieza terminada debe deslizarse suavemente, comprobando el tamaño mínimo funcional.</p>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span>
+                            <p><strong class="text-white">Lado "No-Go" (No Pasa):</strong> Aberturas acotadas al límite máximo tolerable; si la pieza entra en este lado, sufrió deformación o sub-dimensionamiento y queda rechazada automáticamente.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                    <span class="text-zinc-500">Elimina error humano e inspección subjetiva</span>
+                    <span class="font-bold text-emerald-400">NPR: 140 → 28 (-80%)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de Dispositivos Poka-Yoke de Proceso -->
+        <div class="reveal bento-card overflow-hidden mb-12">
+            <div class="p-6 border-b border-white/10 flex flex-wrap justify-between items-center gap-4 bg-zinc-900/40">
+                <div>
+                    <span class="text-[11px] uppercase tracking-widest text-zinc-500 block">Resumen Cuantitativo de Mitigación</span>
+                    <h3 class="text-lg font-semibold text-white">Tabla de Dispositivos Poka-Yoke de Proceso (PFMEA - ErgoDesk)</h3>
+                </div>
+                <span class="text-xs px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 font-medium">Mitigación Directa: 80.00%</span>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="border-b border-white/10 text-xs uppercase tracking-wider text-zinc-400 bg-zinc-900/60">
+                            <th class="p-4">ID / Operación</th>
+                            <th class="p-4">Modo Potencial de Fallo</th>
+                            <th class="p-4">Dispositivo Poka-Yoke</th>
+                            <th class="p-4">Tipo de Poka-Yoke</th>
+                            <th class="p-4 text-center">NPR Inicial</th>
+                            <th class="p-4">Acción Correctiva / Mecanismo</th>
+                            <th class="p-4 text-center">NPR Final</th>
+                            <th class="p-4 text-right">% Reducción</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/10 text-zinc-300">
+                        <tr class="hover:bg-white/[0.02]">
+                            <td class="p-4 font-semibold text-white whitespace-nowrap">OP-07<span class="block text-xs text-zinc-500 font-normal">Cargar Filamento PETG</span></td>
+                            <td class="p-4 text-xs">Filamento degradado por absorción de humedad (hilado excesivo / burbujas / pérdida de rigidez)</td>
+                            <td class="p-4 font-medium text-white text-xs">Sistema de Interbloqueo por Control Higrométrico en Dry Box</td>
+                            <td class="p-4 text-xs text-zinc-400">Prevención / Control de Entrada</td>
+                            <td class="p-4 text-center"><span class="whitespace-nowrap px-2.5 py-1 rounded-full text-xs font-bold bg-orange-500/20 text-orange-400">180 (Crítico)</span></td>
+                            <td class="p-4 text-xs">Bloqueo mecánico/digital de alimentación si la humedad relativa supera el 20% HR.</td>
+                            <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400">36</span></td>
+                            <td class="p-4 text-right font-bold text-emerald-400">80.00%</td>
+                        </tr>
+                        <tr class="hover:bg-white/[0.02]">
+                            <td class="p-4 font-semibold text-white whitespace-nowrap">OP-12<span class="block text-xs text-zinc-500 font-normal">Verificación y Prueba</span></td>
+                            <td class="p-4 text-xs">Desviación dimensional o deformación por encogimiento térmico (warping)</td>
+                            <td class="p-4 font-medium text-white text-xs">Calibre de Tolerancia Límite (Plantilla Go / No-Go)</td>
+                            <td class="p-4 text-xs text-zinc-400">Detección / Inspección 100%</td>
+                            <td class="p-4 text-center"><span class="whitespace-nowrap px-2.5 py-1 rounded-full text-xs font-bold bg-red-500/20 text-red-400">140 (Alto)</span></td>
+                            <td class="p-4 text-xs">Plantilla física con ranuras límite; si la pieza no entra en "Go" o pasa en "No-Go", se descarta automáticamente.</td>
+                            <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400">28</span></td>
+                            <td class="p-4 text-right font-bold text-emerald-400">80.00%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 4. Matriz de Integración para la Entrega del Proyecto -->
+        <div class="reveal">
+            <div class="text-center mb-8">
+                <span class="text-[11px] uppercase tracking-[0.2em] text-zinc-500 font-semibold">Congruencia Documental APQP</span>
+                <h3 class="text-2xl font-bold text-white mt-1">Matriz de Integración del Proyecto</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bento-card p-6 border-white/10">
+                    <span class="text-xs font-mono text-emerald-400">01 • BOM</span>
+                    <h4 class="text-base font-bold text-white mt-1">Lista de Materiales</h4>
+                    <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                        Incluye explícitamente el Filamento PETG, las Almohadillas Antiderrapantes, el Alcohol Isopropílico (99%), la Sílica Gel en Dry Box y la Plantilla Go/No-Go.
+                    </p>
+                </div>
+                <div class="bento-card p-6 border-white/10">
+                    <span class="text-xs font-mono text-emerald-400">02 • Flujo de Proceso</span>
+                    <h4 class="text-base font-bold text-white mt-1">Diagrama de 12 Etapas</h4>
+                    <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                        Refleja claramente la secuencia completa de manufactura aditiva, destacando los puntos de control críticos en la <strong class="text-zinc-200">OP-07 (Dry Box)</strong> y la <strong class="text-zinc-200">OP-12 (Plantilla Go/No-Go)</strong>.
+                    </p>
+                </div>
+                <div class="bento-card p-6 border-white/10">
+                    <span class="text-xs font-mono text-emerald-400">03 • PFMEA</span>
+                    <h4 class="text-base font-bold text-white mt-1">Matriz AMEF</h4>
+                    <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                        Respalda los datos con las métricas de reducción de riesgo global, demostrando una mitigación eficiente de los NPRs críticos iniciales hacia valores seguros <strong class="text-emerald-400">por debajo de 40</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer / Créditos del Equipo -->
     <footer class="py-16 px-6 border-t border-white/10 text-center text-xs text-zinc-500">
         <div class="max-w-4xl mx-auto space-y-6">
@@ -322,7 +474,7 @@
                 <span>•</span>
                 <span>Pérez de la Cruz Mario Enrique</span>
             </div>
-            <p class="text-zinc-600 pt-4">Equipo 18 • Diseñado para presentaciones ejecutivas en Vercel.</p>
+            <p class="text-zinc-600 pt-4">Equipo 5 • Ergodesk.</p>
         </div>
     </footer>
 
